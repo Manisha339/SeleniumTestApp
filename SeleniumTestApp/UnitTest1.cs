@@ -14,7 +14,8 @@ namespace SeleniumTestApp
         {
             using(var driver = new ChromeDriver())
             {
-                driver.Manage().Window.Maximize();
+                
+                /*driver.Manage().Window.Maximize();
                 driver.Navigate().GoToUrl("https://www.simplilearn.com");
 
                 new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(
@@ -23,14 +24,14 @@ namespace SeleniumTestApp
                 var searchBox = driver.FindElementById("header_srch");
                 Assert.IsNotNull(searchBox);
 
-                /*var footer = driver.FindElementByXPath("//footer[@id='footer']");
-                Assert.IsNotNull(footer);*/
+                var footer = driver.FindElementByXPath("//footer[@id='footer']");
+                Assert.IsNotNull(footer);
 
                 var loginButton = driver.FindElementByClassName("login");
                 Assert.IsNotNull(loginButton);
                 loginButton.Click();
 
-                /*new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(
+                new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(
                     d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
 
                 var pageTitle = driver.PageSource.Contains("Learning on Simplilearn");
